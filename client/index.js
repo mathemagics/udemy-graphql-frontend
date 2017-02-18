@@ -4,8 +4,9 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 
-import SongList from './components/songList';
 import App from './components/app';
+import CreateSong from './components/createSong';
+import SongList from './components/songList';
 
 const client = new ApolloClient({});
 
@@ -15,6 +16,7 @@ const Root = () => {
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={SongList} />
+          <Route path="songs/new" component={CreateSong} />
         </Route>
       </Router>
     </ApolloProvider>
