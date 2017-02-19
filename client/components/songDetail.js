@@ -6,12 +6,13 @@ import LyricCreate from './lyricCreate';
 
 class SongDetail extends Component {
   render() {
-    const { song } = this.props.data;
+    const { data: {song}, params: {id} } = this.props;
+    console.log(song);
     return (
       <div>
         <Link to="/">Back</Link>
       { song && <h3>{song.title}</h3> }
-      <LyricCreate />
+      <LyricCreate songId={id}/>
       </div>
     );
   }
